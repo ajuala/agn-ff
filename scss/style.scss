@@ -1,0 +1,66 @@
+@import "../scss/_colors.scss";
+@import "../bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+
+.hero-landing {
+    background-image:  linear-gradient(to left, rgba(black, 0), rgba(black, 0.7)), url("/images/bg-cover.jpg");
+    background-size: cover;
+    background-position: center center;
+    color: $light;
+    font-family: 'Playfair Display', serif;
+}
+
+.text-shadow {
+    text-shadow: 1px 2px 5px maroon;
+}
+
+.nav-brand-logo {
+    height: 32px;
+    width: auto;
+}
+
+
+.founder {
+    background-color: mix($gray-100, $primary, 75%);
+}
+
+.disp-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.pri-neutral {
+    background-color: mix($gray-100, $primary, 95%);
+}
+
+.stock-photo {
+    width: 100%;
+    max-width: 720px;
+    overflow: hidden;
+    > img {
+        width: 100%;
+        height: auto;
+        max-width: 1280px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    > p {
+        width: 80%;
+        text-align: center;
+        font-size: 0.8em;
+    }
+}
+
+.required::after {
+    color: red;
+    content: '*';
+    margin-left: 0.375em;
+}
+
+
+#site-footer {
+    background-color: mix($gray-900, scale-color($primary, $saturation: -70%), 40%);
+    color: $gray-200;
+}
+
