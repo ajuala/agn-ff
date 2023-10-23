@@ -58,6 +58,10 @@
     margin-left: 0.375em;
 }
 
+.form-block {
+    backdrop-filter: brightness(95%);
+}
+
 
 #site-footer {
     background-color: mix($gray-900, scale-color($primary, $saturation: -70%), 40%);
