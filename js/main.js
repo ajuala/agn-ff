@@ -1,28 +1,13 @@
-const PUB_KEY = 'pk_live_27e038d7c1551d2458a93d3b96d304b7dc0e1997';
+let PUB_KEY = 'pk_live_27e038d7c1551d2458a93d3b96d304b7dc0e1997';
+let TEST_KEY =  'pk_test_ff549a15ff6161fc7c8b1607e20ef05a0f32692d';
+PUB_KEY = TEST_KEY;
 
   //this happens after the payment is completed successfully
 function pstackComplete(response) {
   var reference = response.reference;
+  document.querySelector('#paymentRef').value = reference;
 
-  if (response.data.status == 'success') {
-    uploadPhoto()
-      .then(resp => resp.json())
-      .then(d => {
-        if (d?.url) {
-          document.querySelector('#photo-url').value = d.url;
-        }
-      })
-      .then(() => emailFormData())
-      .catch(err => {
-        console.log(err);
-        alert('subscription failed');
-      })
-      .finally(() => {
-        enableSubmit();
-      });
-  } else {
-    alert('yransacyiont failed');
-  }
+    uploadPhoto();
 }
 
 function pstackAbort() {
@@ -57,37 +42,53 @@ function disableSubmit () { // Disable form submission button
   const submit = document.querySelector('#submit-button');
   submit.disabled = true;
   submit.classList.add('disabled');
+  submit.value = '...please wait';
   
 }
 
 function enableSubmit () { // Enable form submission button
-  const submit = document.querySelector('#submit-bitton');
+  const submit = document.querySelector('#submit-button');
   submit.disabled = false;
-  submit.ClassList.remove('diasbled');
+  submit.ClassList.remove('disabled');
+  submit.value = "Submit";
   
 }
 
 // Upload image to server
-async function uploadPhoto () { // returns uploaded photo url
+function uploadPhoto () { // returns uploaded photo url
+
+
   const photo = document.querySelector('#photo').files[0];
-  const filename = document.querySelector('#fullname').value.trim().toLowerCase().replace(/\s/g, '-').replace(/-{2,}/g, '-').slice(0,9);
+  const filename = photo.name.toLowerCase().replace(/\s+/g, '-');
   const mimetype = photo.type;
   const FILESTACK_API_KEY = 'AQ8ohPiIqQKqE7YxlN9Fjz';
-  const url = 'https://www.filestackapi.com/api/file/store/s3?key=${FILESTACK_API_KEY}&mimetype=${mimetype}&filename=${filename}';
+let url = `https://www.filestackapi.com/api/store/s3?key=${FILESTACK_API_KEY}&mimetype=${photo.type}&filename=${filename}`;
+  
+    const reader = new FileReader();
+  reader.onload = event => {
 
-  const blob = new blob(photo, photo.type);
+        const rawData = new Uint8Array(event.target.result);
+        fetch(url, {
+            method: 'POST',
+            body: rawData,
+            headers: {
+                'Content-Type': mimetype
+            }
+        })
+            .then(response => response.json())
+            .then(data => document.querySelector('#photo-url').value = data?.url || '_blank')
+      .then( mailForm )
+            .catch( err => document.querySelector('#delme').textContent = err.toString())
+      .finally(() => enableButton())
+  }
+    reader.readAsArrayBuffer(photo);
 
-  return await fetch(url, {
-    method: 'POST',
-    body: blob,
-    headers: {
-      'Content-Type': photo.type,
-    },
-  });
+
   
 }
 
-function extractFormData () {
+function mailForm () {
+  document.querySelector('#subscr-form').submit();
   
 }
 

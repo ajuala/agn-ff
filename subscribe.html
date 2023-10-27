@@ -88,11 +88,11 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 								    <!-- begin: Subscription form -->
 								    <div class="row justify-content-center form-block py-3 mx-1 rounded-1 mx-md-0">
 									<div class="col col-md-6">
-									    <form id="subscr-form" method='POST' >
+									    <form id="subscr-form" action="https://api.staticforms.xyz/submit" method='POST' >
 										<!-- begin: Full Name -->
 										<div class="mb-3">
 										    <label for="fullname" class="form-label required">Full Name:</label>
-										    <input id="fullname" class="form-control control-lg" type="text" name="fullname" required>
+										    <input id="fullname" class="form-control control-lg" type="text" name="$fullname" required>
 										</div>
 										<!-- end: Full Name -->
 
@@ -103,12 +103,12 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 										    <div class="d-flex gap-3 justify-content-start">
 											<div class="form-check">
 											    <label for="female" class="form-check-label">Female</label>
-											    <input id="female" class="form-check-input" type="radio" name="gender" checked>
+											    <input id="female" class="form-check-input" type="radio" name="$gender" checked>
 											</div>
 
 											<div class="form-check">
 											    <label for="male" class="form-check-label">Male</label>
-											    <input id="male" class="form-check-input" type="radio" name="gender">
+											    <input id="male" class="form-check-input" type="radio" name="$gender">
 											</div>
 
 											</div>
@@ -121,7 +121,7 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 										    <!-- begin: Rank/Position -->
 										    <div class="mb-3">
 											<label class="form-label required" for="rank-position">Rank/Position:</label>
-											<input id="rank-position" class="form-control required" type="text" name="rank-position">
+											<input id="rank-position" class="form-control required" type="text" name="$rank-position">
 										    </div>
 										    <!-- end: Rank/Position -->
 											
@@ -130,7 +130,7 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 										<!-- begin: Religion -->
 										<div class="mb-3">
 										    <label class="form-label" for="religion">Religion:</label>
-										    <input id="religion" class="form-control" type="text" name="religion">
+										    <input id="religion" class="form-control" type="text" name="$religion">
 										</div>
 										<!-- end: Religion -->
 
@@ -140,15 +140,15 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 										    <div class="row">
 											<div class="col-6">
 											    <label class="form-label required" for="country">Country:</label>
-											    <input id="country" class="form-control required" type="text" name="country" required>
+											    <input id="country" class="form-control required" type="text" name="$country" required>
 											</div>
 											<div class="col-6">
 											    <label class="form-label required" for="state">State:</label>
-											    <input id="state" class="form-control" type="text" name="state" required>
+											    <input id="state" class="form-control" type="text" name="$state" required>
 											</div>
 											<div class="col">
 											    <label class="form-label required" for="lga">L.G.A:</label>
-											    <input id="lga" class="form-control" type="text" name="LGA" placeholder="Local Govt of Origin" required>
+											    <input id="lga" class="form-control" type="text" name="$LGA" placeholder="Local Govt of Origin" required>
 											</div>
 											</div>
 											</div>
@@ -159,11 +159,11 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 											<div class="row mb-3">
 											    <div class="col-6">
 												<label class="form-label required" for="phone">Phone:</label>
-												<input id="phone" class="form-control" type="tel" name="Phone" placeholder="Phone Number" required>
+												<input id="phone" class="form-control" type="tel" name="phone" placeholder="Phone Number" required>
 											    </div>
 											    <div class="col-6">
 												<label class="form-label required" for="email">Email:</label>
-												<input id="email" class="form-control" type="email" name="Email" placeholder="Email Address" required>
+												<input id="email" class="form-control" type="email" name="email" placeholder="Email Address" required>
 											    </div>
 											    </div>
 											    <!-- end: Contact info (form) -->
@@ -173,12 +173,12 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 											    <div class="mb-3">
 												<div class="mb-2">
 												    <label class="form-label required" for="professionalism">Field of Professionalism:</label>
-												    <input id="professionalism" class="form-control" type="text" name="profession" required>
+												    <input id="professionalism" class="form-control" type="text" name="$professionalism" required>
 												</div>
 
 												<div>
 												    <label class="form-label" for="association">Association:</label>
-												    <input id="association" class="form-control" type="text" name="Association">
+												    <input id="association" class="form-control" type="text" name="$association">
 												</div>
 												</div>
 												<!-- end: Association / Field of Professionalism -->
@@ -186,14 +186,14 @@ Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COM
 												<!-- begin: Photograph -->
 												<div class="mb-3">
 												    <label class="form-label required" for="photo">Photograph:</label>
-												    <input id="photo" class="form-control" type="file" name="Photograph" required>
+												    <input id="photo" class="form-control" type="file" name="$photograph" required>
 												</div>
 												<!-- end: Photograph -->
 
 
 												<div class="mb-3">
 												    <label class="form-label required" for="about-self">About Yourself</label>
-												    <textarea id="about-self" class="form-control" name="About-Self" cols="30" rows="10" placeholder="About yourself (additional info, not more than 200 words)" required></textarea>
+												    <textarea id="about-self" class="form-control" name="$about-self" cols="30" rows="10" placeholder="About yourself (additional info, not more than 200 words)" required></textarea>
 												    </div>
 
 												    <!-- begin: Submit Button -->
@@ -208,7 +208,10 @@ If you'd like to advertise your products, services and logo/brand in the COMPEND
 													<!-- end: Submit Button -->
 													<!-- start: hidden form fields -->
 													<div>
-														<input id="photo-url" type="hidden" name="photo-url" value="blank">
+														<input id="photo-url" type="hidden" name="$photo-url" value="blank">
+														<input id="paymentRef" type="hidden" name="$paymentRef" value="blank">
+														<input type="hidden" name="accessKey" value="33186ce3-71ef-43ad-b899-84c9a1fae9ea">
+														<input type="hidden" name="redirectTo" value="https://agn-ff.pages.dev/thank-you">
 													</div>
 													<!-- end: hidden form fields -->
 										</form>
