@@ -1,6 +1,6 @@
 let PUB_KEY = 'pk_live_27e038d7c1551d2458a93d3b96d304b7dc0e1997';
 let TEST_KEY =  'pk_test_ff549a15ff6161fc7c8b1607e20ef05a0f32692d';
-PUB_KEY = TEST_KEY;
+// PUB_KEY = TEST_KEY;
 
   //this happens after the payment is completed successfully
 function pstackComplete(response) {
