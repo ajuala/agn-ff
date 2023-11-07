@@ -35,16 +35,7 @@ function payWithPaystack(event) {
   handler.openIframe();
 }
 // end: payWithPaystack()
-
-// start: submit form
-function submitForm(evt){
-  evt.preventDefault();
-  disableSubmit();
-    uploadPhoto();
-}
-// end: submit form
-
-document.querySelector('#subscr-form').addEventListener('submit', submitForm, false);
+document.querySelector('#subscr-form').addEventListener('submit', payWithPaystack, false);
 
 // TODO: functions to develop
 function disableSubmit () { // Disable form submission button

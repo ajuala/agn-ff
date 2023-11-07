@@ -81,12 +81,10 @@ Actors Guild of Nigeria (AGN) in partnership with Facts and Figures Services (WA
     <li>Professional Development: Promotes ongoing learning and skill enhancement through exposure to industry best practices and innovations.</li>
 </ol>
 
-
 <h2 class="text-center">PAYMENT</h2>
-<p>Subscription is FREE.</p>
-
+<p>Subscription fee is &#8358;5000 (Five Thousand Naira) only.</p>
 								    <p>
-										Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COMPANIONS OF FAME. <br> Subscription ends 31st day of December 2023. Launching of the compendium - Lagos and Abuja 30th April 2024. Don't miss this opportunity. Be a COMPANION OF FAME.
+Fill the form below and be included in the COMPENDIUM OF CELEBRITIES titled: COMPANIONS OF FAME, and make payment. Subscription ends 31st day of January 2024. Launching of the compendium - Lagos and Abuja 30th April 2024. Don't miss this opportunity. Be a COMPANION OF FAME.
 </p>
 
 								    <!-- begin: Subscription form -->
@@ -216,8 +214,8 @@ Actors Guild of Nigeria (AGN) in partnership with Facts and Figures Services (WA
 													<!-- start: hidden form fields -->
 													<div>
 														<input id="photo-url" type="hidden" name="$photo-url" value="blank">
-														<input id="paymentRef" type="hidden" name="paymentRef" value="blank">
-														<input type="hidden" name="accessKey" value="dfa5637d-b065-40b9-b93d-298929279c8d">
+														<input id="paymentRef" type="hidden" name="$paymentRef" value="blank">
+														<input type="hidden" name="accessKey" value="33186ce3-71ef-43ad-b899-84c9a1fae9ea">
 														<input type="hidden" name="redirectTo" value="https://agn-ff.pages.dev/thank-you">
 													</div>
 													<!-- end: hidden form fields -->
